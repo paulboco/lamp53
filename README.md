@@ -12,3 +12,6 @@ Package the box with this command:
 ```
 vagrant package --output lamp53.box
 ```
+
+## To Do
+Add xdebug
