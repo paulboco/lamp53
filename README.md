@@ -15,5 +15,6 @@ vagrant package --output lamp53.box
 
 ## To Do
 - Setup xdebug
+- Enable phar
 - Enable rewrite
-- AllowOverride All
+- AllowOverride All in default site
