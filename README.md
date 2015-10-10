@@ -14,4 +14,5 @@ vagrant package --output lamp53.box
 ```
 
 ## To Do
-Add xdebug
+- Setup xdebug
+- Enable rewrite
