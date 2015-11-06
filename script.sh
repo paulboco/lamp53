@@ -51,6 +51,12 @@ echo "ServerName localhost" | sudo tee /etc/apache2/httpd.conf
 # Restart Apache2
 sudo service apache2 restart
 
+# Install PHPUnit
+wget --quiet https://phar.phpunit.de/phpunit-old.phar
+chmod +x phpunit-old.phar
+sudo mv phpunit-old.phar /usr/local/bin/phpunit
+echo "alias phpunit='phpunit --colors'" >> /home/vagrant/.bash_aliases
+
 # Clean up
 echo "------------------------------------------------------------------------"
 echo "Cleaning up. Please wait..."
