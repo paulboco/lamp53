@@ -27,14 +27,14 @@ sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
 sudo apt-get install php5-cgi php5-cli php5-curl php5-common php5-gd php5-mysql php5-xdebug
 
 # Install phpMyAdmin
-mkdir /home/vagrant/Code
-cd /home/vagrant/Code
+mkdir /home/vagrant/github
+cd /home/vagrant/github
 git clone https://github.com/paulboco/phpmyadmin-insecure.git phpmyadmin
 cd /etc/apache2/sites-available
 sudo cp default phpmyadmin
 sudo sed -i -e 's|/var/www|/vagrant/public|g' default
 sudo sed -i -e 's|AllowOverride None|AllowOverride All|g' default
-sudo sed -i -e 's|/var/www|/home/vagrant/Code/phpmyadmin|g' phpmyadmin
+sudo sed -i -e 's|/var/www|/home/vagrant/github/phpmyadmin|g' phpmyadmin
 sudo sed -i -e "s|@localhost|@localhost\n\tServerName phpmyadmin.53|g" phpmyadmin
 sudo a2ensite phpmyadmin
 
