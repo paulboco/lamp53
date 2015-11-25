@@ -44,14 +44,18 @@ sudo a2enmod rewrite
 # Edit php.ini
 sudo sed -i -e 's|display_errors = Off|display_errors = On|g' /etc/php5/apache2/php.ini
 sudo sed -i -e 's|html_errors = Off|html_errors = On|g' /etc/php5/apache2/php.ini
-echo "\n# Zend Extensions" | sudo tee -a /etc/php5/apache2/php.ini
-echo 'zend_extension="/usr/lib/php5/20090626+lfs/xdebug.so"' | sudo tee -a /etc/php5/apache2/php.ini
 
 # Set Apache2 Default Host Name
 echo "ServerName localhost" | sudo tee /etc/apache2/httpd.conf
 
 # Restart Apache2
 sudo service apache2 restart
+
+# Install PHPUnit
+wget --quiet https://phar.phpunit.de/phpunit-old.phar
+chmod +x phpunit-old.phar
+sudo mv phpunit-old.phar /usr/local/bin/phpunit
+echo "alias phpunit='phpunit --colors'" >> /home/vagrant/.bash_aliases
 
 # Clean up
 echo "------------------------------------------------------------------------"

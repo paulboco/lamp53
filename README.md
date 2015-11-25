@@ -12,9 +12,3 @@ Package the box with this command:
 ```
 vagrant package --output lamp53.box
 ```
-
-## To Do
-- Setup xdebug
-- Enable phar
-- Enable rewrite
-- AllowOverride All in default site
